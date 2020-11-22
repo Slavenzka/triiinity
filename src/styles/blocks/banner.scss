@@ -40,20 +40,22 @@
   &__img {
     grid-column: 2 / 3;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     object-fit: cover;
   }
 }
 
 @media (max-width: 1259px) {
   .banner {
-    grid-template-columns: 1fr 48rem 1fr;
+    grid-template-columns: 1fr minmax(32px, 60rem) 1fr;
+    background-size: cover;
 
     &__content {
       grid-column: 2 / 3;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding: 5rem 0;
     }
 
     &__wrapper {
@@ -61,15 +63,7 @@
     }
 
     &__img {
-      position: absolute;
-      width: 100vw;
-      z-index: -1;
+      display: none;
     }
-  }
-}
-
-@media (max-width: 767px) {
-  .banner {
-    grid-template-columns: 1fr minmax(40rem, 60rem) 1fr;
   }
 }
