@@ -1,0 +1,46 @@
+@import "../variables";
+@import "../mixins";
+
+.form {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 3rem;
+
+  &__input {
+    @include fontMain;
+
+    margin: 0;
+    padding: 1rem 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $colorFontMain;
+    opacity: 0.7;
+    box-shadow: none;
+    transition-duration: 0.3s;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  &__button {
+    @include fontButton;
+
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: $colorFontMain;
+    border: none;
+    box-shadow: none;
+    transition-duration: 0.3s;
+
+    &:hover,
+    &:active {
+      background-color: $colorBgHighlight;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}

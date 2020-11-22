@@ -1,0 +1,39 @@
+html {
+  font-size: 10px;
+
+  @media (max-width: 1600px) {
+    font-size: 8px;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 7px;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  font-size: 0;
+}

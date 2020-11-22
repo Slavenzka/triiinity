@@ -1,0 +1,26 @@
+@import "variables";
+
+@mixin fontHeading {
+  font-family: "TT Ramillas", "Times New Roman", serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 4rem;
+  color: $colorFontMain;
+  letter-spacing: 2px;
+}
+
+@mixin fontMain {
+  font-family: "AG Letterica", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.6rem;
+  color: $colorFontMain;
+}
+
+@mixin fontButton {
+  font-family: "AG Letterica", Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.6rem;
+  color: $colorBgMain;
+}
