@@ -70,6 +70,6 @@
 
 @media (max-width: 767px) {
   .banner {
-    grid-template-columns: 1fr 40rem 1fr;
+    grid-template-columns: 1fr minmax(40rem, 60rem) 1fr;
   }
 }
