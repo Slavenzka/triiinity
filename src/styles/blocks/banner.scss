@@ -49,6 +49,7 @@
   .banner {
     grid-template-columns: 1fr minmax(32px, 60rem) 1fr;
     background-size: cover;
+    background-repeat: no-repeat;
 
     &__content {
       grid-column: 2 / 3;
