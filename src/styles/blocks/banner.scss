@@ -67,7 +67,6 @@
       flex-direction: column;
       justify-content: center;
       padding: 5rem 0;
-      z-index: 2;
     }
 
     &__wrapper {
@@ -78,6 +77,7 @@
       position: absolute !important;
       grid-column: none;
       height: 100%;
+      z-index: 1;
     }
   }
 }
