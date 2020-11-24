@@ -35,7 +35,7 @@ class PageController {
 
   _handleClickButton () {
     this.targetObject.scrollTo({
-      top: window.innerHeight,
+      top: Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
       behavior: 'smooth'
     });
   }
