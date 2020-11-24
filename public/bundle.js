@@ -11805,11 +11805,22 @@ _esm_components_core_core_class__WEBPACK_IMPORTED_MODULE_0__["default"].use(comp
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
+/* harmony import */ var _js_const__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/const */ "./src/js/const.js");
+
 
 
 class PageController {
-  renderSlider () {
-    swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper__WEBPACK_IMPORTED_MODULE_0__["EffectFade"]])
+  constructor () {
+    this.targetObject = window || document.documentElement || document.body;
+    this.button = document.querySelector('[data-button-scroll]');
+
+    this._setDefaultScrollPosition = this._setDefaultScrollPosition.bind(this);
+    this._toggleClasses = this._toggleClasses.bind(this);
+    this._handleClickButton = this._handleClickButton.bind(this);
+  }
+
+  _renderSlider () {
+    swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper__WEBPACK_IMPORTED_MODULE_0__["EffectFade"]]);
 
     new swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"]('.swiper-container', {
       autoplay: {
@@ -11825,10 +11836,72 @@ class PageController {
       allowTouchMove: false,
     })
   }
+
+  _handleClickButton () {
+    this.targetObject.scrollTo({
+      top: this.targetObject.innerHeight,
+      behavior: 'smooth'
+    });
+  }
+
+  _setDefaultScrollPosition () {
+    this.targetObject.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  _toggleClasses () {
+    const wrapper = document.querySelector('[data-wrapper]');
+    const content = wrapper.querySelector('[data-content]');
+    const slider = wrapper.querySelector('[data-slider]');
+
+    this.button && this.button.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["BUTTON_VISIBLE_CLASS"]);
+    content.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["CONTENT_VISIBLE_CLASS"]);
+    slider.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["SLIDER_VISIBLE_CLASS"]);
+
+    this._setDefaultScrollPosition();
+    this.targetObject.removeEventListener('load', this._toggleClasses);
+  }
+
+  _setButtonClickHandler () {
+    if (this.button) {
+      this.button.addEventListener('click', this._handleClickButton);
+    }
+  }
+
+  _applyInitialTransitions () {
+    this.targetObject.addEventListener('load', this._toggleClasses);
+  }
+
+  init () {
+    this._renderSlider();
+    this._setButtonClickHandler();
+    this._applyInitialTransitions()
+  }
 }
 
-const page = new PageController()
-page.renderSlider()
+const page = new PageController();
+page.init();
+
+
+/***/ }),
+
+/***/ "./src/js/const.js":
+/*!*************************!*\
+  !*** ./src/js/const.js ***!
+  \*************************/
+/*! exports provided: BUTTON_VISIBLE_CLASS, CONTENT_VISIBLE_CLASS, SLIDER_VISIBLE_CLASS */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BUTTON_VISIBLE_CLASS", function() { return BUTTON_VISIBLE_CLASS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CONTENT_VISIBLE_CLASS", function() { return CONTENT_VISIBLE_CLASS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SLIDER_VISIBLE_CLASS", function() { return SLIDER_VISIBLE_CLASS; });
+const BUTTON_VISIBLE_CLASS = 'banner__scroll--visible';
+const CONTENT_VISIBLE_CLASS = 'banner__content--visible';
+const SLIDER_VISIBLE_CLASS = 'banner__slider--visible';
 
 
 /***/ }),
