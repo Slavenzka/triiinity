@@ -206,7 +206,7 @@
 @media (max-width: 767px) {
   .banner {
     &__scroll {
-      top: calc(var(--vh, 1vh) * 100 - 7rem);
+      top: calc(var(--vh, 1vh) * 100 - 12rem);
     }
   }
 }
