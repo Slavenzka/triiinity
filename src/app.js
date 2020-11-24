@@ -78,10 +78,10 @@ class PageController {
   _setViewportHeight () {
     const updateViewportHeight = () => {
       document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
-      this._updateSwiperSize();
     }
 
-    this.targetObject.addEventListener('resize', updateViewportHeight)
+    updateViewportHeight();
+    this.targetObject.addEventListener('resize', updateViewportHeight);
   }
 
   init () {
