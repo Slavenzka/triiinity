@@ -35,7 +35,7 @@ class PageController {
 
   _handleClickButton () {
     this.targetObject.scrollTo({
-      top: Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
+      top: window.innerHeight,
       behavior: 'smooth'
     });
   }
@@ -55,6 +55,7 @@ class PageController {
     this.button && this.button.classList.add(BUTTON_VISIBLE_CLASS);
     content.classList.add(CONTENT_VISIBLE_CLASS);
     slider.classList.add(SLIDER_VISIBLE_CLASS);
+    slider.style.height = `${window.innerHeight}px`
 
     this._setDefaultScrollPosition();
     this.targetObject.removeEventListener('load', this._toggleClasses);

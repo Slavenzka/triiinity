@@ -11839,7 +11839,7 @@ class PageController {
 
   _handleClickButton () {
     this.targetObject.scrollTo({
-      top: Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0),
+      top: window.innerHeight,
       behavior: 'smooth'
     });
   }
@@ -11859,6 +11859,7 @@ class PageController {
     this.button && this.button.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["BUTTON_VISIBLE_CLASS"]);
     content.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["CONTENT_VISIBLE_CLASS"]);
     slider.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["SLIDER_VISIBLE_CLASS"]);
+    slider.style.height = `${window.innerHeight}px`
 
     this._setDefaultScrollPosition();
     this.targetObject.removeEventListener('load', this._toggleClasses);
