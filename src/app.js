@@ -35,7 +35,7 @@ class PageController {
 
   _handleClickButton () {
     this.targetObject.scrollTo({
-      top: screen.height,
+      top: window.innerHeight,
       behavior: 'smooth'
     });
   }
