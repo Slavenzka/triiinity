@@ -11859,7 +11859,6 @@ class PageController {
     this.button && this.button.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["BUTTON_VISIBLE_CLASS"]);
     content.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["CONTENT_VISIBLE_CLASS"]);
     slider.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["SLIDER_VISIBLE_CLASS"]);
-    slider.style.height = `${window.innerHeight}px`
 
     this._setDefaultScrollPosition();
     this.targetObject.removeEventListener('load', this._toggleClasses);
@@ -11876,6 +11875,8 @@ class PageController {
   }
 
   init () {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+
     this._renderSlider();
     this._setButtonClickHandler();
     this._applyInitialTransitions()

@@ -55,7 +55,6 @@ class PageController {
     this.button && this.button.classList.add(BUTTON_VISIBLE_CLASS);
     content.classList.add(CONTENT_VISIBLE_CLASS);
     slider.classList.add(SLIDER_VISIBLE_CLASS);
-    slider.style.height = `${window.innerHeight}px`
 
     this._setDefaultScrollPosition();
     this.targetObject.removeEventListener('load', this._toggleClasses);
@@ -72,6 +71,8 @@ class PageController {
   }
 
   init () {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+
     this._renderSlider();
     this._setButtonClickHandler();
     this._applyInitialTransitions()
