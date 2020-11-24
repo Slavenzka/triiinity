@@ -108,10 +108,8 @@
   &__list {
     @include initialTransition;
 
-    position: absolute;
-    bottom: 3rem;
-    right: 3rem;
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -133,8 +131,6 @@
     height: var(--size);
     padding: 1rem;
     background-color: $colorBgMain;
-    border-radius: 50%;
-    box-shadow: 0 0.2rem 0.5rem 0 black;
   }
 
   &__icon {
@@ -208,10 +204,6 @@
   .banner {
     &__scroll {
       top: calc(var(--vh, 1vh) * 100 - 7rem);
-    }
-
-    &__item {
-      --size: 8rem;
     }
   }
 }
