@@ -11839,7 +11839,7 @@ class PageController {
 
   _handleClickButton () {
     this.targetObject.scrollTo({
-      top: this.targetObject.innerHeight,
+      top: screen.height,
       behavior: 'smooth'
     });
   }
