@@ -24,3 +24,7 @@
   line-height: 1.6rem;
   color: $colorBgMain;
 }
+
+@mixin initialTransition {
+  transition-duration: 1s;
+}

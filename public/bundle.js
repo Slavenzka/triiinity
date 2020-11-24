@@ -11807,23 +11807,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 
 
-swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper__WEBPACK_IMPORTED_MODULE_0__["EffectFade"]])
+class PageController {
+  renderSlider () {
+    swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"].use([swiper__WEBPACK_IMPORTED_MODULE_0__["Autoplay"], swiper__WEBPACK_IMPORTED_MODULE_0__["EffectFade"]])
 
-new swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"]('.swiper-container', {
-  autoplay: {
-    delay: 3000,
-  },
-  speed: 1000,
-  loop: true,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true
-  },
-  simulateTouch: false,
-  allowTouchMove: false,
-})
+    new swiper__WEBPACK_IMPORTED_MODULE_0__["Swiper"]('.swiper-container', {
+      autoplay: {
+        delay: 3000,
+      },
+      speed: 1000,
+      loop: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      simulateTouch: false,
+      allowTouchMove: false,
+    })
+  }
+}
 
-console.log('Hello webpack');
+const page = new PageController()
+page.renderSlider()
 
 
 /***/ }),

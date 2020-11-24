@@ -11,18 +11,23 @@
 <body>
 
   <svg style="display: none">
-    <symbol id="logo">
+    <symbol id="arrow-down">
+      <path d="M490.4,245.2C490.4,110,380.4,0,245.2,0S0,110,0,245.2s110,245.2,245.2,245.2S490.4,380.4,490.4,245.2z M24.5,245.2
+			c0-121.7,99-220.7,220.7-220.7s220.7,99,220.7,220.7s-99,220.7-220.7,220.7S24.5,366.9,24.5,245.2z"/>
+      <path d="M253.9,360.4l68.9-68.9c4.8-4.8,4.8-12.5,0-17.3s-12.5-4.8-17.3,0l-48,48V138.7c0-6.8-5.5-12.3-12.3-12.3
+			s-12.3,5.5-12.3,12.3v183.4l-48-48c-4.8-4.8-12.5-4.8-17.3,0s-4.8,12.5,0,17.3l68.9,68.9c2.4,2.4,5.5,3.6,8.7,3.6
+			S251.5,362.8,253.9,360.4z"/>
     </symbol>
   </svg>
 
   <main>
-    <section class="banner">
+    <section class="banner" data-wrapper>
       <h1 class="visuallyHidden">
         Заявка на повідомлення про старт продажів в комплексі Triiinity
       </h1>
-      <div class="banner__content">
+      <div class="banner__content" data-content>
         <img
-          src="./assets/logo.jpg"
+          src="./assets/icons/Triiinity_logo.svg"
           alt="Логотип Triiinity"
           class="banner__logo"
         >
@@ -33,29 +38,33 @@
           <p class="banner__descriptor">
             Залиште заявку, і&nbsp;ми&nbsp;вас обов`язково повідомимо про старт продажів!
           </p>
-          <form action="sendEmail.php">
+          <form action="index.php" method="POST">
             <div class="banner__form form">
               <input
                 class="form__input"
                 type="text"
+                name="name"
                 data-type="name"
                 placeholder="Ваше iм'я"
               >
               <input
                 class="form__input"
                 type="tel"
+                name="phone"
                 data-type="phone"
                 placeholder="Ваш телефон"
               >
               <input
                 class="form__input"
                 type="email"
+                name="email"
                 data-type="email"
                 placeholder="Ваш email"
               >
               <button
                 class="form__button"
                 type="submit"
+                data-button-submit
               >
                 Надiслати
               </button>
@@ -63,7 +72,22 @@
           </form>
         </div>
       </div>
-      <div class="banner__slider slider swiper-container">
+      <button
+        class="banner__scroll"
+        type="button"
+        data-button-scroll
+      >
+        <img
+          class="banner__icon"
+          src="assets/icons/Triiinity_logo_small.svg"
+          alt="Small triiinity logo"
+        >
+        <svg class="banner__arrow" viewBox="0 0 490.4 490.4">
+          <use xlink:href="#arrow-down"></use>
+        </svg>
+        Adaptive scroll to form
+      </button>
+      <div class="banner__slider slider swiper-container" data-slider>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
             <img
@@ -125,34 +149,6 @@
             <img
               class="banner__img"
               src="./assets/slide9.jpg"
-              alt="Панорама комплекса Seven Hills"
-            >
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="banner__img"
-              src="./assets/slide10.jpg"
-              alt="Панорама комплекса Seven Hills"
-            >
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="banner__img"
-              src="./assets/slide11.jpg"
-              alt="Панорама комплекса Seven Hills"
-            >
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="banner__img"
-              src="./assets/slide12.jpg"
-              alt="Панорама комплекса Seven Hills"
-            >
-          </div>
-          <div class="swiper-slide">
-            <img
-              class="banner__img"
-              src="./assets/slide13.jpg"
               alt="Панорама комплекса Seven Hills"
             >
           </div>
