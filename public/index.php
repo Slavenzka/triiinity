@@ -8,7 +8,7 @@
           $userPhone = $_POST['phone'];
           $messageSubject = 'Новая заявка по Triiinity';
 
-          $to = "southern.resorts@gmail.com";
+          $to = "";
           $body = "";
           $body .= "From: ".$userName. "\r\n";
           $body .= "Email: ".$userEmail. "\r\n";

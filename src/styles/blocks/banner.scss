@@ -13,8 +13,8 @@
     @include initialTransition;
 
     position: relative;
-    padding: 2rem 0;
-    min-height: calc(var(--vh, 1vh) * 100);
+    padding: 2rem;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: $colorBgMain;
     box-shadow: 0 0 1.5rem 0.3rem black;
     z-index: 2;
@@ -32,6 +32,7 @@
   }
 
   &__wrapper {
+    margin-top: 2rem;
     padding: 0 5rem;
   }
 
@@ -81,30 +82,62 @@
     position: absolute;
     bottom: 3rem;
     right: 3rem;
+    display: none;
     margin: 0;
     padding: 1rem;
     font-size: 0;
     background-color: $colorBgMain;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 0 1.5rem 0.3rem black;
+    box-shadow: 0 0.2rem 0.5rem 0 black;
     z-index: 2;
-    transform: translateY(5rem);
+    transform: translatex(5rem);
     opacity: 0;
     pointer-events: none;
   }
 
   &__scroll--visible {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
-  }
-
-  &__icon {
-    width: 10rem;
   }
 
   &__arrow {
     display: none;
+  }
+
+  &__list {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 2;
+  }
+
+  &__item {
+    --size: 15rem;
+    display: flex;
+    align-items: center;
+    width: var(--size);
+    height: var(--size);
+    padding: 1rem;
+    background-color: $colorBgMain;
+    border-radius: 50%;
+    box-shadow: 0 0.2rem 0.5rem 0 black;
+  }
+
+  &__icon {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .banner {
+    &__wrapper {
+      padding: 0;
+    }
   }
 }
 
@@ -122,6 +155,8 @@
       justify-content: center;
       padding: 5rem 0;
       width: 100%;
+      height: auto;
+      box-shadow: none;
     }
 
     &__wrapper {
@@ -135,37 +170,32 @@
     &__scroll {
       top: calc(var(--vh, 1vh) * 100 - 12rem);
       bottom: auto;
-    }
-
-    &__icon {
-      width: 7rem;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .banner {
-    &__content {
-      box-shadow: none;
-    }
-
-    &__scroll {
-      pointer-events: all;
-    }
-
-    &__scroll {
-      top: calc(var(--vh, 1vh) * 100 - 7rem);
+      display: block;
       padding: 0;
-    }
-
-    &__icon {
-      display: none;
+      pointer-events: all;
     }
 
     &__arrow {
       display: block;
       width: 5rem;
       fill: $colorFontMain;
+    }
+
+    &__list {
+      top: 3rem;
+      bottom: auto;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .banner {
+    &__scroll {
+      top: calc(var(--vh, 1vh) * 100 - 7rem);
+    }
+
+    &__item {
+      --size: 8rem;
     }
   }
 }

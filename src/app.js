@@ -13,12 +13,14 @@ class PageController {
     this._setDefaultScrollPosition = this._setDefaultScrollPosition.bind(this);
     this._toggleClasses = this._toggleClasses.bind(this);
     this._handleClickButton = this._handleClickButton.bind(this);
+    this._setViewportHeight = this._setViewportHeight.bind(this);
+    this._updateSwiperSize = null;
   }
 
   _renderSlider () {
     Swiper.use([Autoplay, EffectFade]);
 
-    new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper-container', {
       autoplay: {
         delay: 3000,
       },
@@ -31,6 +33,8 @@ class PageController {
       simulateTouch: false,
       allowTouchMove: false,
     })
+
+    this._updateSwiperSize = swiper.updateSize();
   }
 
   _handleClickButton () {
@@ -70,9 +74,16 @@ class PageController {
     this.targetObject.addEventListener('load', this._toggleClasses);
   }
 
-  init () {
-    document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+  _setViewportHeight () {
+    const updateViewportHeight = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight/100}px`);
+      this._updateSwiperSize();
+    }
 
+    this.targetObject.addEventListener('resize', updateViewportHeight)
+  }
+
+  init () {
     this._renderSlider();
     this._setButtonClickHandler();
     this._applyInitialTransitions()
