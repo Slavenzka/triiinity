@@ -60,7 +60,6 @@ class PageController {
     content.classList.add(CONTENT_VISIBLE_CLASS);
     slider.classList.add(SLIDER_VISIBLE_CLASS);
 
-    this._setDefaultScrollPosition();
     this.targetObject.removeEventListener('load', this._toggleClasses);
   }
 
@@ -84,6 +83,7 @@ class PageController {
   }
 
   init () {
+    this._setDefaultScrollPosition();
     this._renderSlider();
     this._setButtonClickHandler();
     this._applyInitialTransitions()
