@@ -11865,6 +11865,7 @@ class PageController {
     content.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["CONTENT_VISIBLE_CLASS"]);
     slider.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["SLIDER_VISIBLE_CLASS"]);
     list.classList.add(_js_const__WEBPACK_IMPORTED_MODULE_1__["LIST_VISIBLE_CLASS"]);
+    slider.style.height = `${window.innerHeight}px`
 
     this.targetObject.removeEventListener('load', this._toggleClasses);
   }

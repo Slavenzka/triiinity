@@ -61,6 +61,7 @@ class PageController {
     content.classList.add(CONTENT_VISIBLE_CLASS);
     slider.classList.add(SLIDER_VISIBLE_CLASS);
     list.classList.add(LIST_VISIBLE_CLASS);
+    slider.style.height = `${window.innerHeight}px`
 
     this.targetObject.removeEventListener('load', this._toggleClasses);
   }
