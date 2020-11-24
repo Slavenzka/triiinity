@@ -106,6 +106,8 @@
   }
 
   &__list {
+    @include initialTransition;
+
     position: absolute;
     bottom: 3rem;
     right: 3rem;
@@ -114,6 +116,13 @@
     padding: 0;
     list-style: none;
     z-index: 2;
+    transform: translateY(5rem);
+    opacity: 0;
+
+    &--visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   &__item {
@@ -184,6 +193,13 @@
     &__list {
       top: 3rem;
       bottom: auto;
+      transform: translateY(-5rem);
+      opacity: 0;
+
+      &--visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   }
 }

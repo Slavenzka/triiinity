@@ -1,7 +1,7 @@
 import { Swiper, Autoplay, EffectFade } from 'swiper'
 import {
   BUTTON_VISIBLE_CLASS,
-  CONTENT_VISIBLE_CLASS,
+  CONTENT_VISIBLE_CLASS, LIST_VISIBLE_CLASS,
   SLIDER_VISIBLE_CLASS
 } from './js/const'
 
@@ -55,10 +55,12 @@ class PageController {
     const wrapper = document.querySelector('[data-wrapper]');
     const content = wrapper.querySelector('[data-content]');
     const slider = wrapper.querySelector('[data-slider]');
+    const list = wrapper.querySelector('[data-list-logos]');
 
     this.button && this.button.classList.add(BUTTON_VISIBLE_CLASS);
     content.classList.add(CONTENT_VISIBLE_CLASS);
     slider.classList.add(SLIDER_VISIBLE_CLASS);
+    list.classList.add(LIST_VISIBLE_CLASS);
 
     this.targetObject.removeEventListener('load', this._toggleClasses);
   }
