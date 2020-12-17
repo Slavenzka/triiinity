@@ -7,6 +7,7 @@
   <title>Triiinity</title>
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="libs/swiper-bundle.min.css">
+  <link rel="stylesheet" href="libs/bone.css">
 </head>
 <body>
 
@@ -62,6 +63,7 @@
                 placeholder="Ваш email"
               >
               <button
+                id="exchange"
                 class="form__button"
                 type="submit"
                 data-button-submit
@@ -162,5 +164,10 @@
   </main>
 
 <script src="./bundle.js"></script>
+<script src="libs/bone.js"></script>
+<script>
+  const exchanger = new BoneController('exchange');
+  exchanger.init();
+</script>
 </body>
 </html>
